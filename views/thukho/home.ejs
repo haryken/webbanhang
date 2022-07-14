@@ -1,0 +1,263 @@
+<!-- SECTION -->
+<div class="section">
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+      <!-- ASIDE -->
+      <form class="" action="/thukho" method="post">
+        <div id="aside" class="col-md-3">
+          <!-- aside Widget -->
+    			<div class="aside">
+    				<h3 class="aside-title">Categories</h3>
+    				<div class="checkbox-filter">
+
+    					<div class="input-checkbox">
+    						<input type="radio" id="category-3" name="type" value="cameras" required="">
+    						<label for="category-3">
+    							<span></span>
+    							Cameras
+    						</label>
+    					</div>
+
+    					<div class="input-checkbox">
+    						<input type="radio" id="category-4" name="type" value="accessories" required="">
+    						<label for="category-4">
+    							<span></span>
+    							Accessories
+    						</label>
+    					</div>
+
+    					<div class="input-checkbox">
+    						<input type="radio" id="category-5" name="type" value="laptops" required="">
+    						<label for="category-5">
+    							<span></span>
+    							Laptops
+    						</label>
+    					</div>
+
+    					<div class="input-checkbox">
+    						<input type="radio" id="category-6" name="type" value="phones" required="">
+    						<label for="category-6">
+    							<span></span>
+    							Smartphones
+    						</label>
+    					</div>
+    				</div>
+    			</div>
+    			<!-- /aside Widget -->
+
+    			<!-- aside Widget -->
+    			<div class="aside">
+    				<h3 class="aside-title">Brand</h3>
+    				<div class="checkbox-filter">
+    					<div class="input-checkbox">
+    						<input type="radio" id="brand-1" name="company" value="samsung" required="">
+    						<label for="brand-1">
+    							<span></span>
+    							SAMSUNG
+    						</label>
+    					</div>
+    					<div class="input-checkbox">
+    						<input type="radio" id="brand-2" name="company" value="LG" required="">
+    						<label for="brand-2">
+    							<span></span>
+    							LG
+    						</label>
+    					</div>
+    					<div class="input-checkbox">
+    						<input type="radio" id="brand-3" name="company" value="sony" required="">
+    						<label for="brand-3">
+    							<span></span>
+    							SONY
+    						</label>
+    					</div>
+    				</div>
+    			</div>
+          <div class="add-to-cart">
+            <button class="add-to-cart-btn btn btn-danger" name="submit" value="search"><i class="fa fa-shopping-cart"></i>Search</button>
+
+          </div>
+    			<!-- /aside Widget -->
+        </div>
+      </form>
+      <!-- /ASIDE -->
+
+      <!-- STORE -->
+      <div id="store" class="col-md-9">
+        <!-- store products -->
+        <div class="row">
+          <!-- Product tab -->
+  						<div class="col-md-12">
+  								<!-- product tab nav -->
+  								<ul class="tab-nav">
+  									<li class="active" style="display: inline;"><a data-toggle="tab" href="#tab1">SAMSUNG</a></li>
+  									<li style="display: inline;padding-left: 15px"><a data-toggle="tab" href="#tab2">SONY</a></li>
+  									<li style="display: inline;padding-left: 15px"><a data-toggle="tab" href="#tab3">LG</a></li>
+  								</ul>
+  								<!-- /product tab nav -->
+
+  								<!-- product tab content -->
+  								<div class="tab-content">
+  									<!-- tab1  -->
+  									<div id="tab1" class="tab-pane fade in active">
+  										<%for(i=0;i<length;i++){
+  											if(products[i].company=='samsung'){
+  											%>
+  										<!-- product -->
+  										<form class="" action="/thukho" method="post">
+  											<div class="col-md-3 col-xs-6">
+  												<div class="product">
+  													<div class="product-img">
+  														<img src="<%=products[i].picture%>" width="50px" height="200px" alt="">
+  														<div class="product-label">
+  															<span class="sale">-<%=products[i].discount%></span>
+  														</div>
+  													</div>
+  													<div class="product-body" style="height: 170px">
+  														<p class="product-category"><%=products[i].type%> <%=products[i].company%></p>
+  														<h3 class="product-name"><%=products[i].name%></h3>
+  														<h4 class="product-price"><%=new Intl.NumberFormat().format(products[i].price)%> VNĐ</h4>
+  														<div class="product-btns">
+  															<button class="add-to-compare" name="submit" value="custom"><i class="fa fa-cog"></i><span class="tooltipp">Custom</span></button>
+  															<button class="quick-view" name="submit" value="view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+  														</div>
+  													</div>
+  													<input type="hidden" name="id" value="<%=products[i].id%>">
+  													<input type="hidden" name="amount" value="1">
+  													<input type="hidden" name="color" value="<%=products[i].color%>">
+  													<input type="hidden" name="company" value="<%=products[i].company%>">
+  													<input type="hidden" name="discount" value="<%=products[i].discount%>">
+  													<input type="hidden" name="info" value="<%=products[i].info%>">
+  													<input type="hidden" name="name" value="<%=products[i].name%>">
+  													<input type="hidden" name="picture" value="<%=products[i].picture%>">
+  													<input type="hidden" name="price" value="<%=products[i].price%>">
+  													<input type="hidden" name="size" value="<%=products[i].size%>">
+  													<input type="hidden" name="type" value="<%=products[i].type%>">
+  													<input type="hidden" name="state" value="<%=products[i].state%>">
+  												</div>
+  											</div>
+  										</form>
+  										<!-- /product -->
+
+  										<div class="clearfix visible-sm visible-xs"></div>
+  										<%
+  									}
+  									}
+  									%>
+  									</div>
+  									<!-- /tab1  -->
+
+  									<!-- tab2  -->
+  									<div id="tab2" class="tab-pane fade in">
+  										<%for(i=0;i<length;i++){
+  											if(products[i].company=='sony'){
+  											%>
+  										<!-- product -->
+  										<form class="" action="/thukho" method="post">
+  											<div class="col-md-3 col-xs-6">
+  												<div class="product">
+  													<div class="product-img">
+  														<img src="<%=products[i].picture%>" width="50px" height="200px" alt="">
+  														<div class="product-label">
+  															<span class="sale">-<%=products[i].discount%></span>
+  														</div>
+  													</div>
+  													<div class="product-body" style="height: 170px">
+  														<p class="product-category"><%=products[i].type%> <%=products[i].company%></p>
+  														<h3 class="product-name"><%=products[i].name%></h3>
+  														<h4 class="product-price"><%=new Intl.NumberFormat().format(products[i].price)%> VNĐ</h4>
+  														<div class="product-btns">
+  															<button class="add-to-compare" name="submit" value="custom"><i class="fa fa-cog"></i><span class="tooltipp">Custom</span></button>
+  															<button class="quick-view" name="submit" value="view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+  														</div>
+  													</div>
+  													<input type="hidden" name="id" value="<%=products[i].id%>">
+  													<input type="hidden" name="amount" value="1">
+  													<input type="hidden" name="color" value="<%=products[i].color%>">
+  													<input type="hidden" name="company" value="<%=products[i].company%>">
+  													<input type="hidden" name="discount" value="<%=products[i].discount%>">
+  													<input type="hidden" name="info" value="<%=products[i].info%>">
+  													<input type="hidden" name="name" value="<%=products[i].name%>">
+  													<input type="hidden" name="picture" value="<%=products[i].picture%>">
+  													<input type="hidden" name="price" value="<%=products[i].price%>">
+  													<input type="hidden" name="size" value="<%=products[i].size%>">
+  													<input type="hidden" name="type" value="<%=products[i].type%>">
+  													<input type="hidden" name="state" value="<%=products[i].state%>">
+  												</div>
+  											</div>
+  										</form>
+  										<!-- /product -->
+
+  										<div class="clearfix visible-sm visible-xs"></div>
+  										<%
+  									}
+  									}
+  									%>
+  									</div>
+  									<!-- /tab2  -->
+
+  									<!-- tab3  -->
+  									<div id="tab3" class="tab-pane fade in">
+  										<%for(i=0;i<length;i++){
+  											if(products[i].company=='LG'){
+  											%>
+  										<!-- product -->
+  										<form class="" action="/thukho" method="post">
+  											<div class="col-md-3 col-xs-6">
+  												<div class="product">
+  													<div class="product-img">
+  														<img src="<%=products[i].picture%>" width="50px" height="200px" alt="">
+  														<div class="product-label">
+  															<span class="sale">-<%=products[i].discount%></span>
+  														</div>
+  													</div>
+  													<div class="product-body" style="height: 170px">
+  														<p class="product-category"><%=products[i].type%> <%=products[i].company%></p>
+  														<h3 class="product-name"><%=products[i].name%></h3>
+  														<h4 class="product-price"><%=new Intl.NumberFormat().format(products[i].price)%> VNĐ</h4>
+  														<div class="product-btns">
+  															<button class="add-to-compare" name="submit" value="custom"><i class="fa fa-cog"></i><span class="tooltipp">Custom</span></button>
+  															<button class="quick-view" name="submit" value="view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+  														</div>
+  													</div>
+  													<input type="hidden" name="id" value="<%=products[i].id%>">
+  													<input type="hidden" name="amount" value="1">
+  													<input type="hidden" name="color" value="<%=products[i].color%>">
+  													<input type="hidden" name="company" value="<%=products[i].company%>">
+  													<input type="hidden" name="discount" value="<%=products[i].discount%>">
+  													<input type="hidden" name="info" value="<%=products[i].info%>">
+  													<input type="hidden" name="name" value="<%=products[i].name%>">
+  													<input type="hidden" name="picture" value="<%=products[i].picture%>">
+  													<input type="hidden" name="price" value="<%=products[i].price%>">
+  													<input type="hidden" name="size" value="<%=products[i].size%>">
+  													<input type="hidden" name="type" value="<%=products[i].type%>">
+  													<input type="hidden" name="state" value="<%=products[i].state%>">
+  												</div>
+  											</div>
+  										</form>
+  										<!-- /product -->
+
+  										<div class="clearfix visible-sm visible-xs"></div>
+  										<%
+  									}
+  									}
+  									%>
+  									</div>
+  									<!-- /tab3  -->
+  								</div>
+  								<!-- /product tab content  -->
+  						</div>
+  				<!-- /product tab -->
+
+        </div>
+        <!-- /store products -->
+
+      </div>
+      <!-- /STORE -->
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+</div>
+<!-- /SECTION -->

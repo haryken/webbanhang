@@ -1,0 +1,71 @@
+<div class="section">
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+      <form class="" action="/nhanvien" method="post">
+        <div class="col-md-7">
+          <!-- Billing Details -->
+          <div class="billing-details">
+            <div class="section-title">
+              <h3 class="title">Customer Information</h3>
+            </div>
+            <b>Name: </b><%=name%> <br>
+            <b>Email:</b> <%=email%><br>
+            <b>Phone:</b> <%=phone%><br>
+            <b>Date:</b> <%=date%><br>
+            <b>Shiping address:</b> <%=shipingadd%><br>
+          </div>
+          <!-- /Billing Details -->
+          <a href="/nhanvienoders"><b>FINISH</b></a>
+          <form class="" action="/nhanvien" method="post">
+            <input type="hidden" name="id" value="<%=id%>">
+          </form>
+        </div>
+      <!-- Order Details -->
+      <div class="col-md-5 order-details">
+        <div class="section-title text-center">
+          <h3 class="title">Order</h3>
+        </div>
+        <div class="order-summary">
+          <div class="order-col">
+            <div><strong>ID</strong></div>
+            <div><strong><%=id%></strong></div>
+          </div>
+          <div class="order-col">
+            <div><strong>PRODUCT</strong></div>
+            <div><strong>TOTAL</strong></div>
+          </div>
+          <div class="order-products">
+          <%for(i=0;i<length;i++){
+            %>
+            <div class="order-col">
+              <div><%=products[i].amount%>x <%=products[i].name%></div>
+              <div><%=new Intl.NumberFormat().format(products[i].price)%> VNĐ</div>
+            </div>
+            <%
+          }
+          %>
+          </div>
+          <div class="order-col">
+            <div>Shiping</div>
+            <div><strong>FREE</strong></div>
+          </div>
+          <div class="order-col">
+            <div><strong>TOTAL</strong></div>
+            <div><strong class=""><%=new Intl.NumberFormat().format(cost)%> VNĐ</strong></div>
+          </div>
+        </div>
+        <div class="payment-method">
+            <label for="payment-1">
+              <span></span>
+              <%=ht%>
+            </label>
+      </div>
+      <!-- /Order Details -->
+      </form>
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+</div>

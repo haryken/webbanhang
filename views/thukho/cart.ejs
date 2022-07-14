@@ -1,0 +1,62 @@
+
+<!-- SECTION -->
+<div class="section">
+	<!-- container -->
+	<div class="container">
+		<!-- row -->
+		<%if (length >0){
+			%>
+				<button class="primary-btn order-submit"><a href="/checkout">Create order</a></button>
+				<%
+		}
+		%>
+	<div id="store" class="col-md-12">
+		<div class="row">
+			<div class="cart-list">
+			<%for(i=0;i<length;i++){
+				%>
+
+			<!-- product -->
+			<form class="" action="/thukho" method="post">
+			<div class="col-md-12 col-xs-6">
+				<button type="submit" name="submit" value="view2" style="border: none; background-color: white;width: 700px; height: 100px;">
+					<div class="product-widget">
+						<div class="product-img">
+							<img src="<%=products[i].picture%>" alt="" height="35px" width="35px">
+						</div>
+						<div class="product-body">
+							<h3 class="product-name"><%=products[i].name%></h3>
+							<h3 class="product-name">Company: <%=products[i].company%></h3>
+							<h4 class="product-price"><span class="qty"><%=products[i].amount%>x</span><%=products[i].price%> VNĐ</h4>
+						</div>
+						<input type="hidden" name="id" value="<%=products[i].id%>">
+						<input type="hidden" name="amount" value="1">
+						<input type="hidden" name="color" value="<%=products[i].color%>">
+						<input type="hidden" name="company" value="<%=products[i].company%>">
+						<input type="hidden" name="discount" value="<%=products[i].discount%>">
+						<input type="hidden" name="info" value="<%=products[i].info%>">
+						<input type="hidden" name="name" value="<%=products[i].name%>">
+						<input type="hidden" name="picture" value="<%=products[i].picture%>">
+						<input type="hidden" name="price" value="<%=products[i].price%>">
+						<input type="hidden" name="size" value="<%=products[i].size%>">
+						<input type="hidden" name="type" value="<%=products[i].type%>">
+						<input type="hidden" name="state" value="<%=products[i].state%>">
+						<button class="delete" name="submit" value="delete" style="background-color: red;display: inline;	"><i class="fa fa-close" ></i></button>
+					</div>
+				</button>
+			</div>
+			</form>
+			<!-- /product -->
+
+			<%
+		}
+		%>
+		</div>
+	</div>
+		</div>
+		<!-- /row -->
+
+	</div>
+	<!-- /container -->
+</div>
+<!-- /SECTION -->

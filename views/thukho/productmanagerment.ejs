@@ -1,0 +1,88 @@
+<div class="section">
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="section-title">
+      <h3 class="title">Item Information</h3>
+    </div>
+    <div class="row">
+      <form class="" action="/thukho" method="post">
+        <div class="col-md-6">
+          <!-- Billing Details -->
+          <div class="billing-details">
+            <div class="form-group">
+              <input class="input" type="text" name="name" placeholder="Name" value="" required="">
+            </div>
+            <div class="form-group">
+              <select class="input" name="company" required="">
+                <option value="">Company</option>
+                <option value="samsung">samsung</option>
+                <option value="sony">sony</option>
+                <option value="LG">LG</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <select class="input" name="discount" required="">
+                <option value="">Discount</option>
+                <%for(i=0;i<=35;i++){
+                  %>
+                    <option value="<%=i%>%"><%=i%>%</option>
+                  <%
+                }
+                %>
+              </select>
+            </div>
+            <div class="form-group">
+                <input name="picture" type="file" class="custom-file-input input" id="customFile" accept="image/gif, image/jpeg, image/png, image/bmp" placeholder="Picture" value="12" required="">
+            </div>
+            <div class="form-group">
+              <input class="input" type="number" name="price" placeholder="Price" required="" min="1000">
+            </div>
+            <div class="form-group">
+              <input class="input" type="text" name="color" placeholder="Color" required="">
+            </div>
+          </div>
+          <!-- /Billing Details -->
+        </div>
+        <div class="col-md-6">
+          <!-- Billing Details -->
+          <div class="billing-details">
+            <div class="form-group">
+              <textarea class="" name="info" rows="7" cols="75" placeholder="Description" required=""></textarea>
+            </div>
+            <div class="form-group">
+              <input class="input" type="text" name="size" placeholder="Size" required="">
+            </div>
+            <div class="form-group">
+              <select class="input" name="state" required="">
+                <option value="">State</option>
+                <option value="true">Display</option>
+                <option value="false">None</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <select class="input" name="type" required="">
+                <option value="">Type</option>
+                <option value="accessories">Accessory</option>
+                <option value="phones">Smartphone</option>
+                <option value="cameras">Camera</option>
+                <option value="laptops">Laptop</option>
+              </select>
+            </div>
+          </div>
+          <!-- /Billing Details -->
+        </div>
+        <button type="submit" name="submit" value="add_product" class="primary-btn order-submit">Add</button>
+      </form>
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+</div>
+<script>
+    // Add the following code if you want the name of the file appear on select
+    $(".custom-file-input").on("change", function() {
+        var fileName = "ken.jpg";
+        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+</script>

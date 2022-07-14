@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<!-- //Meta-Tags -->
+<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Style -->
+<link rel="stylesheet" href="css/loginstyle.css" type="text/css" media="all">
+<!-- Fonts -->
+<link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+<!-- //Fonts -->
+
+</head>
+<!-- //Head -->
+
+<!-- Body -->
+<body>
+
+	<h1>HỆ THỐNG BÁN HÀNG</h1>
+
+	<div class="w3layoutscontaineragileits">
+	<h2>Đăng nhập</h2>
+		<form action="/" method="post">
+			<input type="text" Name="username" placeholder="USER NAME" required="vui lòng nhập username" onclick="document.getElementById("error").innerHTML='';">
+			<input type="password" Name="password" placeholder="PASSWORD" required="" value="123456">
+			<ul class="agileinfotickwthree">
+			</ul>
+			<div class="aitssendbuttonw3ls">
+				<input type="submit" value="ĐĂNG NHẬP">
+				<div class="clear"></div>
+			</div>
+		</form>
+	</div>
+	<p style="color:red" id="error"><%=error%></p>
+</body>
+<!-- //Body -->
+<script>
+	function click(){
+		document.getElementById("error").innerHTML='';
+	}
+</script>
+</html>

@@ -1,0 +1,160 @@
+
+<!-- SECTION -->
+<div class="section">
+	<!-- container -->
+	<div class="container">
+		<!-- row -->
+    <div id="store" class="col-md-12">
+			<!-- store products -->
+			<div class="row">
+				<!-- Product tab -->
+						<div class="col-md-12">
+								<!-- product tab nav -->
+								<ul class="tab-nav">
+									<li class="active" style="display: inline;"><a data-toggle="tab" href="#tab1">Saler</a></li>
+									<li style="display: inline;padding-left: 15px"><a data-toggle="tab" href="#tab2">Warehouse manager</a></li>
+									<li style="display: inline;padding-left: 15px"><a data-toggle="tab" href="#tab3">Admin</a></li>
+                  <li style="display: inline;padding-left: 15px"><a data-toggle="tab" href="#tab4">Accountant</a></li>
+								</ul>
+								<!-- /product tab nav -->
+
+								<!-- product tab content -->
+								<div class="tab-content">
+									<!-- tab1  -->
+									<div id="tab1" class="tab-pane fade in active">
+										<%for(i=0;i<length;i++){
+											if(products[i].vaitro=='1'){
+											%>
+                      <!-- product -->
+                      <form class="" action="/quanly" method="post">
+                        <div class="col-md-3 col-xs-6">
+                          <div class="product">
+                            <div class="product-body" style="height: 170px">
+                              <h3 class="product-name">Name: <%=products[i].name%></h3>
+                              <p><b>Username</b> <%=products[i].username%></p>
+                              <p><b>Email</b> <%=products[i].mail%></p>
+                              <p><b>Phone</b> <%=products[i].phone%></p>
+                              <div class="product-btns">
+                                <button class="add-to-compare" name="submit" value="custom"><i class="fa fa-cog"></i><span class="tooltipp">Custom</span></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <input type="hidden" name="username" value="<%=products[i].username%>">
+                      </form>
+                      <!-- /product -->
+
+										<div class="clearfix visible-sm visible-xs"></div>
+										<%
+									}
+								}
+									%>
+									</div>
+									<!-- /tab1  -->
+
+									<!-- tab2  -->
+									<div id="tab2" class="tab-pane fade in">
+                    <%for(i=0;i<length;i++){
+											if(products[i].vaitro=='2'){
+											%>
+                      <!-- product -->
+                      <form class="" action="/quanly" method="post">
+                        <div class="col-md-3 col-xs-6">
+                          <div class="product">
+                            <div class="product-body" style="height: 170px">
+                              <h3 class="product-name">Name: <%=products[i].name%></h3>
+                              <p><b>Username</b> <%=products[i].username%></p>
+                              <p><b>Email</b> <%=products[i].mail%></p>
+                              <p><b>Phone</b> <%=products[i].phone%></p>
+                              <div class="product-btns">
+                                <button class="add-to-compare" name="submit" value="custom"><i class="fa fa-cog"></i><span class="tooltipp">Custom</span></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <input type="hidden" name="username" value="<%=products[i].username%>">
+                      </form>
+                      <!-- /product -->
+
+										<div class="clearfix visible-sm visible-xs"></div>
+										<%
+									}
+								}
+									%>
+									</div>
+									<!-- /tab2  -->
+
+									<!-- tab3  -->
+									<div id="tab3" class="tab-pane fade in">
+                    <%for(i=0;i<length;i++){
+											if(products[i].vaitro=='3'){
+											%>
+                      <!-- product -->
+                      <form class="" action="/quanly" method="post">
+                        <div class="col-md-3 col-xs-6">
+                          <div class="product">
+                            <div class="product-body" style="height: 170px">
+                              <h3 class="product-name">Name: <%=products[i].name%></h3>
+                              <p><b>Username</b> <%=products[i].username%></p>
+                              <p><b>Email</b> <%=products[i].mail%></p>
+                              <p><b>Phone</b> <%=products[i].phone%></p>
+                              <div class="product-btns">
+                                <button class="add-to-compare" name="submit" value="custom"><i class="fa fa-cog"></i><span class="tooltipp">Custom</span></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <input type="hidden" name="username" value="<%=products[i].username%>">
+                      </form>
+                      <!-- /product -->
+
+										<div class="clearfix visible-sm visible-xs"></div>
+										<%
+									}
+								}
+									%>
+									</div>
+									<!-- /tab3  -->
+                  <!-- tab4  -->
+                  <div id="tab4" class="tab-pane fade in">
+                    <%for(i=0;i<length;i++){
+                      if(products[i].vaitro=='4'){
+                      %>
+                    <!-- product -->
+                    <form class="" action="/quanly" method="post">
+                      <div class="col-md-3 col-xs-6">
+                        <div class="product">
+                          <div class="product-body" style="height: 170px">
+                            <h3 class="product-name">Name: <%=products[i].name%></h3>
+                            <p><b>Username</b> <%=products[i].username%></p>
+                            <p><b>Email</b> <%=products[i].mail%></p>
+                            <p><b>Phone</b> <%=products[i].phone%></p>
+                            <div class="product-btns">
+                              <button class="add-to-compare" name="submit" value="custom"><i class="fa fa-cog"></i><span class="tooltipp">Custom</span></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <input type="hidden" name="username" value="<%=products[i].username%>">
+                    </form>
+                    <!-- /product -->
+
+                    <div class="clearfix visible-sm visible-xs"></div>
+                    <%
+                  }
+                }
+                  %>
+                  </div>
+                  <!-- /tab4  -->
+								</div>
+								<!-- /product tab content  -->
+						</div>
+				<!-- /product tab -->
+			</div>
+			<!-- /store products -->
+    </div>
+		<!-- /row -->
+	</div>
+	<!-- /container -->
+</div>
+<!-- /SECTION -->

@@ -1,0 +1,59 @@
+
+<!-- SECTION -->
+<div class="section">
+	<!-- container -->
+	<div class="container">
+		<!-- row -->
+		<div class="row">
+			<!-- Order Details -->
+      <div class="col-md-12 order-details">
+        <div class="section-title text-center">
+          <h3 class="title">Your profile</h3>
+        </div>
+        <div class="order-summary">
+          <div class="">
+            <div><strong>Name</strong></div>
+						<p style="display: inline;"><%=user.name%></p>
+          </div>
+					<div class="">
+						<div><strong>Role</strong></div>
+						<% if(user.vaitro =='1'){
+							%>
+								<p style="display: inline;">Sell</p>
+							<%
+						}%>
+						<% if(user.vaitro =='2'){
+							%>
+								<p style="display: inline;">Warehouse Manager</p>
+							<%
+						}%>
+						<% if(user.vaitro =='3'){
+							%>
+								<p style="display: inline;">admin</p>
+							<%
+						}%>
+						<% if(user.vaitro =='4'){
+							%>
+								<p style="display: inline;">Accountant</p>
+							<%
+						}%>
+
+					</div>
+					<div class="">
+						<div><strong>Phone</strong></div>
+						<p style="display: inline;"><%=user.phone%></p>
+					</div>
+					<div class="">
+						<div><strong>Mail</strong></div>
+						<p style="display: inline;"><%=user.mail%></p>
+					</div>
+        </div>
+      </div>
+			<button type="submit" name="submit" value="orders" class="primary-btn order-submit"><a href="/reset"><b>Reset password</b></a></button>
+      <!-- /Order Details -->
+		</div>
+		<!-- /row -->
+	</div>
+	<!-- /container -->
+</div>
+<!-- /SECTION -->

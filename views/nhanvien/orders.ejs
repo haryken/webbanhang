@@ -1,0 +1,111 @@
+
+<!-- SECTION -->
+<div class="section">
+	<!-- container -->
+	<div class="container">
+		<!-- Product tab -->
+		<div class="rows">
+			<form class="" action="/nhanvien" method="post">
+				<div class="col-md-4 col-xs-6">
+						<input class="input" type="date" name="date" placeholder="Date" required="">
+				</div>
+				<div class="col-md-4 col-xs-6">
+						<button type="submit" name="submit" value="ordersday" class="primary-btn order-submit">Search</button>
+
+				</div>
+			</form>
+		</div>
+				<div class="col-md-12">
+					<h2><%=date%></h2>
+						<!-- product tab nav -->
+						<ul class="tab-nav">
+							<li class="active" style="display: inline;"><a data-toggle="tab" href="#tab1">New orders</a></li>
+							<li style="display: inline;padding-left: 15px"><a data-toggle="tab" href="#tab2">Authorize orders</a></li>
+						</ul>
+						<!-- /product tab nav -->
+
+						<!-- product tab content -->
+						<div class="tab-content">
+							<!-- tab1  -->
+							<div id="tab1" class="tab-pane fade in active">
+								<!-- product -->
+								<%for(i=0;i<length;i++){
+									if(products[i].state=='false' || products[i].paid=='false'){
+									%>
+								<form class="" action="/nhanvien" method="post">
+									<div class="col-md-3 col-xs-6">
+										<div class="product">
+											<div class="product-body">
+												<p class="product-category">ID: <%=products[i].id%></p>
+												<p class="product-category">Date: <%=products[i].date%></p>
+												<p class="product-category"><%=products[i].ht%></p>
+												<h3 class="product-name"><a href="#">Phone: <%=products[i].phone%></a></h3>
+												<h4 class="product-price"><%=new Intl.NumberFormat().format(products[i].cost)%> VNĐ</h4>
+												<div class="product-btns">
+													<button class="quick-view" name="submit" value="orders"><i class="fa fa-eye" ></i><span class="tooltipp">quick view</span></button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<input type="hidden" name="id" value="<%=products[i].id%>">
+									<input type="hidden" name="cost" value="<%=products[i].cost%>">
+									<input type="hidden" name="date" value="<%=products[i].date%>">
+									<input type="hidden" name="ht" value="<%=products[i].ht%>">
+									<input type="hidden" name="phone" value="<%=products[i].phone%>">
+									<input type="hidden" name="shipingadd" value="<%=products[i].shipingadd%>">
+									<input type="hidden" name="state" value="<%=products[i].state%>">
+									<input type="hidden" name="username" value="<%=products[i].username%>">
+									<input type="hidden" name="paid" value="<%=products[i].paid%>">
+								</form>
+								<%
+							}
+						}
+							%>
+				        <!-- /product -->
+							</div>
+							<!-- /tab1  -->
+
+							<!-- tab2  -->
+							<div id="tab2" class="tab-pane fade in">
+								<!-- product -->
+								<%for(i=0;i<length;i++){
+									if(products[i].state=='true' && products[i].paid=='true'){
+									%>
+								<form class="" action="/nhanvien" method="post">
+									<div class="col-md-3 col-xs-6">
+										<div class="product">
+											<div class="product-body">
+												<p class="product-category">ID: <%=products[i].id%></p>
+												<p class="product-category">Date: <%=products[i].date%></p>
+												<p class="product-category"><%=products[i].ht%></p>
+												<h3 class="product-name"><a href="#">Phone: <%=products[i].phone%></a></h3>
+												<h4 class="product-price"><%=new Intl.NumberFormat().format(products[i].cost)%> VNĐ</h4>
+												<div class="product-btns">
+													<button class="quick-view" name="submit" value="orders"><i class="fa fa-eye" ></i><span class="tooltipp">quick view</span></button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<input type="hidden" name="id" value="<%=products[i].id%>">
+									<input type="hidden" name="cost" value="<%=products[i].cost%>">
+									<input type="hidden" name="date" value="<%=products[i].date%>">
+									<input type="hidden" name="ht" value="<%=products[i].ht%>">
+									<input type="hidden" name="phone" value="<%=products[i].phone%>">
+									<input type="hidden" name="shipingadd" value="<%=products[i].shipingadd%>">
+									<input type="hidden" name="state" value="<%=products[i].state%>">
+									<input type="hidden" name="username" value="<%=products[i].username%>">
+								</form>
+								<%
+							}
+						}
+							%>
+				        <!-- /product -->
+							<!-- /tab2  -->
+						</div>
+						<!-- /product tab content  -->
+				</div>
+		<!-- /product tab -->
+	</div>
+	<!-- /container -->
+</div>
+<!-- /SECTION -->
